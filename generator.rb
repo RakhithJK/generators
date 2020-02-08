@@ -1,12 +1,12 @@
 class CourseTitleGenerator
 
-  def initialize(topic, qty)
+  def initialize(topic, amount)
     @topic = topic.capitalize
-    @qty = qty.to_i
+    @amount = amount.to_i
   end
 
   def create_titles
-    titles = all_titles.sample(@qty)
+    titles = all_titles.sample(@amount)
     titles.each do |title|
       puts title.gsub! '{topic}', @topic
     end
@@ -28,11 +28,11 @@ class CourseTitleGenerator
   end
 end
 
-puts 'Enter Your Topic'
+puts 'Enter Your Topic:'
 topic = gets.chomp
 
-puts 'How Many Titles'
-qty = gets.chomp
+puts 'How Many Titles:'
+amount = gets.chomp
 
-generator = CourseTitleGenerator.new(topic, qty)
+generator = CourseTitleGenerator.new(topic, amount)
 generator.create_titles
