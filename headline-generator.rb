@@ -5,14 +5,14 @@ class HeadlineGenerator
     @amount = amount.to_i
   end
 
-  def create_lines
-    lines = all_lines.sample(@amount)
-    lines.each do |line|
-      puts line.gsub! '{industry}', @industry
+  def create_headlines
+    headlines = all_headlines.sample(@amount)
+    headlines.each do |headline|
+      puts headline.gsub! '{industry}', @industry
     end
   end
 
-  def all_lines
+  def all_headlines
     [
       'The Full Story Of My Career In {industry}',
       '{industry} Changed My Income Forever',
@@ -31,8 +31,8 @@ end
 puts 'Enter Your Industry:'
 industry = gets.chomp
 
-puts 'How Many Subject Lines:'
+puts 'How Many Subject headlines:'
 amount = gets.chomp
 
 generator = HeadlineGenerator.new(industry, amount)
-generator.create_lines
+generator.create_headlines
