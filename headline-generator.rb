@@ -1,4 +1,4 @@
-class SubjectLineGenerator
+class HeadlineGenerator
 
   def initialize(industry, amount)
     @industry = industry.capitalize
@@ -34,5 +34,5 @@ industry = gets.chomp
 puts 'How Many Subject Lines:'
 amount = gets.chomp
 
-generator = SubjectLineGenerator.new(industry, amount)
+generator = HeadlineGenerator.new(industry, amount)
 generator.create_lines
